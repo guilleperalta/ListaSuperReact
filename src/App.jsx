@@ -8,14 +8,14 @@ const App = () => {
 
   useEffect(() => {
     const obtenerProductosLS = () => {
-      const productosLS = JSON.parse(localStorage.getItem('productosLS'));
-      productosLS.length > 1 && setProductos(productosLS)
+      const productosLS = JSON.parse(localStorage.getItem('productosLS'))
+      productosLS && productosLS.length > 1 && setProductos(productosLS)
     }
     obtenerProductosLS();
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('productosLS', JSON.stringify( productos ));
+    localStorage.setItem('productosLS', JSON.stringify( productos ))
   }, [productos])
 
   return (

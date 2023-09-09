@@ -4,12 +4,16 @@ import Producto from "./Producto"
 const Listado = ({productos , setProductos}) => {
 
     const [total,setTotal] = useState(0)
+    const [cantidadTotal,setCantidadTotal] = useState(0)
     
     useEffect(() => {
         let suma = 0
+        let cantTotal = 0
         productos.map(prod => {
             suma = (Number(prod.precio) * prod.cantidad) + suma
+            cantTotal = Number(prod.cantidad) + cantTotal
         })
+        setCantidadTotal(cantTotal)
         setTotal(suma.toFixed(2))
     }, [productos])
     
@@ -20,7 +24,7 @@ const Listado = ({productos , setProductos}) => {
                 <span>Listado de productos</span>
                 <hr />
                 <div className="estadisticas">
-                    <span>Cant de productos: {productos.length} </span>
+                    <span>Cant de productos: {cantidadTotal} </span>
                     <span>Total: $ {total} </span>
                 </div>
 
@@ -43,7 +47,7 @@ const Listado = ({productos , setProductos}) => {
                     )
                 }
             })}
-            {productos.length > 0 && (<span className="titulo-listado-listo">Productos ya agregados</span>)}
+            {productos && productos.length > 0 && (<span className="titulo-listado-listo">Productos ya agregados</span>)}
             {productos.map(producto => {
                 if (producto.marcado) {
                     return (

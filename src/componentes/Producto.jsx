@@ -15,7 +15,7 @@ const Producto = ({producto,setProductos,productos}) => {
 
     const modificarCantidad = (id) => {
         const nuevaCantidad = prompt('Ingresá la nueva cantidad',producto.cantidad)
-        if (!isNaN(nuevoPrecio)){
+        if (!isNaN(nuevaCantidad)){
             const productoNuevo = {
                 id,
                 nombre: producto.nombre,

@@ -66,7 +66,7 @@ const Producto = ({producto,setProductos,productos}) => {
       
     return (
         <div id={producto.id} className={producto.marcado ? 'listo producto' : 'producto'}>
-            <div onClick={() => modificarNombre(producto.id)}>{producto.nombre}</div>
+            <div className="nombre" onClick={() => modificarNombre(producto.id)}>{producto.nombre}</div>
             <div onClick={() => modificarCantidad(producto.id)}>{producto.cantidad}</div>
             <div onClick={() => modificarPrecio(producto.id)}>$ {producto.precio}</div>
             <div className="acciones">

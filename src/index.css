@@ -112,7 +112,7 @@ body {
 }
 .listado .titulos {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr .5fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   padding: .5rem 1rem;
 }
 .estadisticas {
@@ -125,14 +125,23 @@ body {
 }
 .producto {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr .8fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   background: var(--blanco);
   color: var(--negro);
   padding: 0 1rem;
   border-radius: 1rem;
 }
+.producto div , .titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.producto div.nombre , .titulo.nombre {
+  justify-content: start;
+}
 .acciones {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   gap: 1rem;
 }

@@ -30,7 +30,7 @@ const Listado = ({productos , setProductos}) => {
 
             </div>
             <div className="titulos">
-                <span className="titulo">Nombre</span>
+                <span className="titulo nombre">Nombre</span>
                 <span className="titulo">Cantidad</span>
                 <span className="titulo">Precio</span>
                 <span className="titulo">Acciones</span>
